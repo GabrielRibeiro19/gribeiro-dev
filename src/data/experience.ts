@@ -11,21 +11,23 @@ export const experience: ExperienceItem[] = [
       en: "Mid-level Fullstack Developer",
     },
     summary: {
-      pt: "Alocado à Zig, referência em tecnologia para o entretenimento ao vivo: soluções digitais que suportam grandes eventos, arenas e operações de alto volume.",
-      en: "Allocated to Zig, a leading live-entertainment technology company: digital solutions supporting large events, arenas and high-volume operations.",
+      pt: "Alocado à Zig, referência em tecnologia para o entretenimento ao vivo. Comecei na tribo de Payments e hoje atuo na tribo de Produtos Internos, evoluindo as soluções que suportam grandes eventos, arenas e operações de alto volume.",
+      en: "Allocated to Zig, a leading live-entertainment technology company. I started in the Payments tribe and today work in the Internal Products tribe, evolving the solutions that support large events, arenas and high-volume operations.",
     },
     highlights: {
       pt: [
+        "Migração de todo o backend do produto para aceitação do novo CNPJ alfanumérico da Receita Federal, mudança que atravessou os serviços da plataforma",
+        "Atuação na tribo de Payments (pagamentos e cashless) e, atualmente, na tribo de Produtos Internos",
         "Novas funcionalidades e interfaces com React e TypeScript, seguindo design system e protótipos do Figma",
         "Desenvolvimento de APIs, integrações e serviços com Node.js, consumindo APIs internas e externas",
-        "Componentes reutilizáveis e interfaces escaláveis e performáticas",
         "Monitoramento e observabilidade com Datadog e Grafana",
         "Colaboração direta com produto, design e backend — boas práticas, versionamento e qualidade de código",
       ],
       en: [
+        "Migrated the product's entire backend to accept Brazil's new alphanumeric CNPJ (company tax ID), a change that cut across the platform's services",
+        "Worked in the Payments tribe (payments and cashless) and currently in the Internal Products tribe",
         "New features and interfaces with React and TypeScript, following the design system and Figma prototypes",
         "APIs, integrations and services with Node.js, consuming internal and external APIs",
-        "Reusable components and scalable, performant interfaces",
         "Monitoring and observability with Datadog and Grafana",
         "Direct collaboration with product, design and backend — best practices, versioning and code quality",
       ],

@@ -93,6 +93,7 @@
   }
   html {
     @apply font-sans scroll-pt-20;
+    scroll-behavior: smooth;
   }
   ::selection {
     background: var(--primary);
@@ -110,6 +111,33 @@
   .animate-blink {
     animation: blink 1.2s step-end infinite;
   }
+  .animate-float {
+    animation: float 7s ease-in-out infinite;
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 6s ease-in-out infinite;
+  }
+  /* Mouse-follow spotlight (driven by --spot-x/--spot-y set via JS) */
+  .spotlight {
+    position: relative;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      color-mix(in oklch, var(--primary) 12%, transparent),
+      transparent 70%
+    );
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
 }
 
 @keyframes blink {
@@ -118,11 +146,36 @@
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
-  .animate-blink {
+  .animate-blink,
+  .animate-float,
+  .animate-glow-pulse {
     animation: none;
+  }
+  .spotlight::before {
+    display: none;
   }
 }

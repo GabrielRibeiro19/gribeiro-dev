@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Gabriel Ribeiro — Resume</title>
+<style>
+  @page { size: A4; margin: 10mm 13mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --accent: #0e7490;
+    --ink: #1a2430;
+    --muted: #5b6b7a;
+    --line: #d8e0e6;
+  }
+  body {
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.1pt;
+    line-height: 1.36;
+  }
+  header { margin-bottom: 12px; }
+  h1 { font-size: 20pt; letter-spacing: -0.5px; }
+  .role { font-size: 11.5pt; color: var(--accent); font-weight: 600; margin-top: 1px; }
+  .contacts { margin-top: 6px; color: var(--muted); font-size: 8.6pt; }
+  .contacts span { white-space: nowrap; }
+  .contacts span + span::before { content: "  ·  "; color: var(--line); }
+  h2 {
+    font-size: 9.5pt; text-transform: uppercase; letter-spacing: 1.6px;
+    color: var(--accent); border-bottom: 1px solid var(--line);
+    padding-bottom: 3px; margin: 10px 0 6px;
+  }
+  .summary { color: var(--ink); }
+  .job { margin-bottom: 7px; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .job-title { font-weight: 700; font-size: 10.3pt; }
+  .job-company { color: var(--accent); font-weight: 600; }
+  .job-period { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
+  .job-summary { color: var(--muted); margin: 1px 0 3px; }
+  ul { padding-left: 14px; }
+  li { margin-bottom: 2px; }
+  .skills-row { margin-bottom: 4px; }
+  .skills-row b { display: inline-block; min-width: 150px; }
+  .edu { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+  .two-col { display: flex; gap: 24px; }
+  .two-col > div { flex: 1; }
+  .fine { color: var(--muted); }
+  a { color: inherit; text-decoration: none; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Gabriel Ribeiro</h1>
+    <p class="role">Mid-level Fullstack Developer · React · Next.js · Node.js · TypeScript</p>
+    <p class="contacts">
+      <span>Piracicaba, SP — Brazil</span>
+      <span>+55 19 99849-9296</span>
+      <span>gabriel.hsribeiro19@gmail.com</span>
+      <span>gribeiro.dev</span>
+      <span>linkedin.com/in/gabriel-ribeiro-378028161</span>
+      <span>github.com/GabrielRibeiro19</span>
+    </p>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Fullstack developer with 5+ years of experience in technology, specialized in React, Next.js, Node.js and
+    TypeScript. Currently at Zig — a leading live-entertainment technology company in Brazil — through Cubos
+    Tecnologia, building solutions for large events and high-volume operations. End-to-end experience: from
+    Figma prototypes to AWS/Vercel deployments, with testing, CI/CD and observability (Datadog, Grafana).
+    More than a dozen websites and systems shipped to production as a freelancer.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="job-title">Mid-level Fullstack Developer — <span class="job-company">Cubos Tecnologia (allocated to Zig)</span></p>
+      <p class="job-period">May 2025 — present</p>
+    </div>
+    <p class="job-summary">Zig is a leading live-entertainment technology company: large events, arenas and high-volume operations. Worked in the Payments tribe and currently in the Internal Products tribe.</p>
+    <ul>
+      <li>Migrated the product's entire backend to accept Brazil's new alphanumeric CNPJ (company tax ID) — a cross-cutting change to validations, data models and integrations, without interrupting live operations.</li>
+      <li>Built features and interfaces with React and TypeScript, following the design system and Figma prototypes.</li>
+      <li>Developed APIs, integrations and services with Node.js, consuming internal and external APIs.</li>
+      <li>Monitoring and observability with Datadog and Grafana; solid versioning, code review and code quality practices.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="job-title">Junior Front End Developer — <span class="job-company">SmartBreeder</span></p>
+      <p class="job-period">Sep 2024 — May 2025</p>
+    </div>
+    <ul>
+      <li>Built new screens for the company's system with ReactJS from Figma prototypes, following the product's design system.</li>
+      <li>Reusable components and API integration/consumption.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="job-title">Junior Full Stack Developer — <span class="job-company">TBrWeb</span></p>
+      <p class="job-period">Jul 2022 — Aug 2024</p>
+    </div>
+    <ul>
+      <li>Modern, responsive websites and systems with React, Next.js, Node.js and Tailwind, with custom layouts per client.</li>
+      <li>API integrations, backend and frontend development.</li>
+      <li>Full deployment: AWS server setup and domain/subdomain configuration.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <p class="job-title">Help Desk Technical Support (intern → full-time) — <span class="job-company">TBrWeb</span></p>
+      <p class="job-period">Jun 2021 — Jul 2022</p>
+    </div>
+    <ul>
+      <li>Technical support and troubleshooting; hired full-time within 6 months and promoted to the development team.</li>
+    </ul>
+  </div>
+
+  <h2>Selected projects</h2>
+  <div class="job">
+    <ul>
+      <li><b>Pira Turismo</b> — SaaS travel marketplace platform (B2B/B2C) with online booking. NestJS + Next.js 15 + Prisma/PostgreSQL monorepo. Own product, in production. (piraturismo.com.br)</li>
+      <li><b>Grazy Modas</b> — e-commerce with a custom admin panel (Next.js 16, Prisma, Auth.js, PostgreSQL).</li>
+      <li><b>Construtor Brandão</b> — business website with embedded Payload CMS (Next.js 16, Tailwind v4, Neon, Firebase Storage).</li>
+      <li><b>10+ freelance websites and systems</b> in production, end to end — full portfolio at gribeiro.dev.</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <p class="skills-row"><b>Frontend</b> React, Next.js, TypeScript, JavaScript, TailwindCSS, React Query, Styled Components</p>
+  <p class="skills-row"><b>Backend</b> Node.js, NestJS, Prisma, PostgreSQL, REST APIs</p>
+  <p class="skills-row"><b>DevOps &amp; Cloud</b> Docker, AWS, Vercel, CI/CD</p>
+  <p class="skills-row"><b>Observability</b> Datadog, Grafana</p>
+  <p class="skills-row"><b>Quality &amp; Tools</b> Automated testing, Git/GitHub, Figma, Insomnia/Postman</p>
+
+  <div class="two-col">
+    <div>
+      <h2>Education</h2>
+      <div class="edu"><span><b>Computer Engineering</b> — Univesp</span><span class="fine">2022–2027 (in progress)</span></div>
+      <div class="edu"><span><b>B.Sc. in Information Technology</b> — Univesp</span><span class="fine">2022–2025</span></div>
+      <div class="edu"><span><b>Technical Degree in Informatics</b> — IFSP</span><span class="fine">2018–2021</span></div>
+      <h2>Languages</h2>
+      <p>Portuguese (native) · English (intermediate, improving)</p>
+    </div>
+    <div>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Git and GitHub, zero to advanced</li>
+        <li>Advanced JavaScript</li>
+        <li>Object-Oriented Programming</li>
+        <li>Docker in practice</li>
+        <li>Scalable Microservices Challenge</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

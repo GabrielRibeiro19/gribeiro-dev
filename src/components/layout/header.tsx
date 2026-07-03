@@ -1,7 +1,7 @@
 "use client";
 
 import { DownloadIcon, MenuIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
@@ -20,7 +20,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 
 const NAV_KEYS = [
   "about",
@@ -45,14 +46,10 @@ function CvDropdown({ label }: { label: string }) {
         }
       />
       <DropdownMenuContent align="end" className="w-44">
-        <DropdownMenuItem
-          render={<a href={siteConfig.cv.pt} download />}
-        >
+        <DropdownMenuItem render={<a href={siteConfig.cv.pt} download />}>
           {t("cvPt")}
         </DropdownMenuItem>
-        <DropdownMenuItem
-          render={<a href={siteConfig.cv.en} download />}
-        >
+        <DropdownMenuItem render={<a href={siteConfig.cv.en} download />}>
           {t("cvEn")}
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -60,12 +57,83 @@ function CvDropdown({ label }: { label: string }) {
   );
 }
 
+/** Hides the header while scrolling down, shows it again on scroll up. */
+function useHideOnScroll(disabled: boolean) {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (disabled) {
+      return;
+    }
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (Math.abs(y - lastY) > 8) {
+          setHidden(y > lastY && y > 140);
+          lastY = y;
+        }
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [disabled]);
+
+  return disabled ? false : hidden;
+}
+
+/** Tracks which home section is in view to highlight the nav link. */
+function useScrollSpy(enabled: boolean) {
+  const [active, setActive] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!enabled) {
+      return;
+    }
+    const sections = NAV_KEYS.map((key) =>
+      document.getElementById(key),
+    ).filter((section): section is HTMLElement => section !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [enabled]);
+
+  return enabled ? active : null;
+}
+
 export function Header() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const hidden = useHideOnScroll(open);
+  const active = useScrollSpy(isHome);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md transition-transform duration-300",
+        hidden && "-translate-y-full",
+      )}
+    >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6 lg:px-8">
         <Link
           href="/"
@@ -80,7 +148,13 @@ export function Header() {
             <Link
               key={key}
               href={`/#${key}`}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              aria-current={active === key ? "true" : undefined}
+              className={cn(
+                "rounded-md px-3 py-2 text-sm transition-colors",
+                active === key
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
             >
               {t(key)}
             </Link>

@@ -2,6 +2,7 @@ import { MailIcon } from "lucide-react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from "@/components/icons";
+import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { siteConfig, whatsappUrl } from "@/config/site";
 
@@ -57,39 +58,43 @@ export async function Hero() {
             {t("pitch")}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-            <Button size="lg" render={<a href="#projects" />}>
-              {t("ctaProjects")}
-            </Button>
-            <Button size="lg" variant="outline" render={<a href="#contact" />}>
-              {t("ctaContact")}
-            </Button>
-            <div className="ml-1 flex items-center gap-1">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={social.label}
-                  className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                >
-                  {social.icon}
-                </a>
-              ))}
+          <Reveal delay={0.15}>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <Button size="lg" render={<a href="#projects" />}>
+                {t("ctaProjects")}
+              </Button>
+              <Button size="lg" variant="outline" render={<a href="#contact" />}>
+                {t("ctaContact")}
+              </Button>
+              <div className="ml-1 flex items-center gap-1">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
-          <p className="mt-10 font-mono text-xs text-muted-foreground">
-            <span className="text-primary">const</span> stack = [
-            {"React, Next.js, Node.js, TypeScript"}]
-          </p>
+          <Reveal delay={0.35}>
+            <p className="mt-10 font-mono text-xs text-muted-foreground">
+              <span className="text-primary">const</span> stack = [
+              {"React, Next.js, Node.js, TypeScript"}]
+            </p>
+          </Reveal>
         </div>
 
-        <div className="relative shrink-0">
+        <div className="relative shrink-0 animate-float">
           <div
             aria-hidden
-            className="absolute -inset-6 rounded-full bg-primary/15 blur-3xl"
+            className="absolute -inset-6 rounded-full bg-primary/15 blur-3xl animate-glow-pulse"
           />
           <Image
             src={siteConfig.avatar}

@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
@@ -86,6 +87,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="flex min-h-full flex-col">
         <ThemeProvider>
           <NextIntlClientProvider>
+            <ScrollProgress />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

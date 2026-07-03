@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./globals.css";
 
 /**
@@ -17,12 +18,12 @@ export default function GlobalNotFound() {
           O link que você acessou não existe. · The link you followed doesn&apos;t
           exist.
         </p>
-        <a
+        <Link
           href="/"
           className="mt-2 font-medium text-primary underline-offset-4 hover:underline"
         >
           ~/gribeiro.dev
-        </a>
+        </Link>
       </body>
     </html>
   );

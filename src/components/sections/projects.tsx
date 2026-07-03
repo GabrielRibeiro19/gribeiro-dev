@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { GitHubIcon } from "@/components/icons";
 import { Reveal } from "@/components/motion/reveal";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -41,11 +42,16 @@ export async function Projects({ featured, grid }: ProjectsProps) {
       </Reveal>
       <div className="grid gap-5 sm:grid-cols-2">
         {featured.map((project, index) => (
-          <Reveal key={project.id} delay={Math.min(index * 0.07, 0.3)}>
-            <Link
-              href={`/case/${project.caseStudySlug}`}
-              className="group flex h-full flex-col rounded-2xl border border-border/70 bg-card/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
-            >
+          <Reveal
+            key={project.id}
+            delay={Math.min(index * 0.07, 0.3)}
+            className="h-full"
+          >
+            <SpotlightCard>
+              <Link
+                href={`/case/${project.caseStudySlug}`}
+                className="group flex h-full flex-col rounded-2xl border border-border/70 bg-card/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
+              >
               <div className="mb-4 flex items-center justify-between">
                 <Badge variant="secondary" className="font-mono text-xs">
                   {t(KIND_KEY[project.kind])}
@@ -68,11 +74,12 @@ export async function Projects({ featured, grid }: ProjectsProps) {
                   </span>
                 ))}
               </div>
-              <p className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-primary">
-                {t("viewCase")}
-                <ArrowRightIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </p>
-            </Link>
+                <p className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-primary">
+                  {t("viewCase")}
+                  <ArrowRightIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </p>
+              </Link>
+            </SpotlightCard>
           </Reveal>
         ))}
       </div>

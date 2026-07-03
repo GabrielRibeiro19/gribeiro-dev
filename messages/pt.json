@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gabriel Ribeiro — Desenvolvedor Fullstack | React, Next.js, Node.js",
-    "description": "Desenvolvedor Fullstack Pleno com 4+ anos de experiência em React, Next.js, Node.js e TypeScript. Do design ao deploy: aplicações web escaláveis, APIs e produtos digitais."
+    "description": "Desenvolvedor Fullstack Pleno com 5+ anos de experiência em React, Next.js, Node.js e TypeScript. Do design ao deploy: aplicações web escaláveis, APIs e produtos digitais."
   },
   "nav": {
     "about": "Sobre",
@@ -18,7 +18,7 @@
   "hero": {
     "greeting": "Olá, eu sou",
     "role": "Desenvolvedor Fullstack",
-    "pitch": "Há mais de 4 anos construindo aplicações web do design ao deploy — hoje criando soluções para grandes eventos ao vivo na Zig, com React, Next.js, Node.js e TypeScript.",
+    "pitch": "Há mais de 5 anos construindo aplicações web do design ao deploy — hoje criando soluções para grandes eventos ao vivo na Zig, com React, Next.js, Node.js e TypeScript.",
     "ctaProjects": "Ver projetos",
     "ctaContact": "Fale comigo",
     "avatarAlt": "Foto de Gabriel Ribeiro"

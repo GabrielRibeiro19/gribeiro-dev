@@ -10,7 +10,7 @@ export async function About({ paragraphs }: AboutProps) {
   const t = await getTranslations("about");
 
   const stats = [
-    { value: "4+", label: t("statsYears") },
+    { value: "5+", label: t("statsYears") },
     { value: "10+", label: t("statsProjects") },
     { value: "40+", label: t("statsRepos") },
   ];

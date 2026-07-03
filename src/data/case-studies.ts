@@ -32,13 +32,15 @@ export const caseStudies: CaseStudy[] = [
     },
     solution: {
       pt: [
-        "No frontend, desenvolvo novas funcionalidades e interfaces com React e TypeScript, seguindo padrões de design system e protótipos do Figma — com foco em componentes reutilizáveis, escaláveis e performáticos.",
-        "No backend, desenvolvo APIs, integrações e serviços com Node.js, consumindo e expondo APIs internas e externas que conectam as diferentes frentes do produto.",
+        "Passei pela tribo de Payments — o coração dos pagamentos e do cashless da operação — e hoje atuo na tribo de Produtos Internos, que constrói as ferramentas usadas pelos times da empresa no dia a dia.",
+        "Entre as entregas de maior impacto está a migração de todo o backend do produto para aceitação do novo CNPJ alfanumérico da Receita Federal: uma mudança transversal, que exigiu mapear e atualizar validações, modelos de dados e integrações em praticamente todos os serviços da plataforma — sem interromper operações ao vivo.",
+        "No frontend, desenvolvo novas funcionalidades e interfaces com React e TypeScript, seguindo padrões de design system e protótipos do Figma; no backend, APIs, integrações e serviços com Node.js.",
         "O trabalho acontece em colaboração direta com os times de produto, design e backend, com boas práticas de versionamento, code review e qualidade de código — e monitoramento contínuo com Datadog e Grafana para garantir a saúde da plataforma em produção.",
       ],
       en: [
-        "On the frontend, I build new features and interfaces with React and TypeScript, following design system standards and Figma prototypes — focused on reusable, scalable and performant components.",
-        "On the backend, I develop APIs, integrations and services with Node.js, consuming and exposing internal and external APIs that connect the different fronts of the product.",
+        "I started in the Payments tribe — the heart of the operation's payments and cashless systems — and today I work in the Internal Products tribe, which builds the tools the company's teams use every day.",
+        "Among the highest-impact deliveries is the migration of the product's entire backend to accept Brazil's new alphanumeric CNPJ (company tax ID): a cross-cutting change that required mapping and updating validations, data models and integrations across virtually every service of the platform — without interrupting live operations.",
+        "On the frontend, I build new features and interfaces with React and TypeScript, following design system standards and Figma prototypes; on the backend, APIs, integrations and services with Node.js.",
         "The work happens in direct collaboration with product, design and backend teams, with solid versioning, code review and code quality practices — plus continuous monitoring with Datadog and Grafana to keep the platform healthy in production.",
       ],
     },
@@ -62,6 +64,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     results: [
       {
+        value: { pt: "CNPJ alfanumérico", en: "Alphanumeric CNPJ" },
+        label: {
+          pt: "migração de todo o backend do produto",
+          en: "migration of the product's entire backend",
+        },
+      },
+      {
         value: { pt: "Alto volume", en: "High volume" },
         label: {
           pt: "grandes eventos e arenas por todo o Brasil",
@@ -69,17 +78,10 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
-        value: { pt: "Tempo real", en: "Real time" },
+        value: { pt: "2 tribos", en: "2 tribes" },
         label: {
-          pt: "operações ao vivo sem janela para falhas",
-          en: "live operations with zero room for failure",
-        },
-      },
-      {
-        value: { pt: "Squad completa", en: "Full squad" },
-        label: {
-          pt: "produto, design, frontend e backend",
-          en: "product, design, frontend and backend",
+          pt: "Payments e Produtos Internos",
+          en: "Payments and Internal Products",
         },
       },
     ],
