@@ -59,6 +59,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "Git / GitHub", level: "core" },
       { name: "Figma", level: "working" },
       { name: "Insomnia / Postman", level: "working" },
+      { name: "WordPress", level: "working" },
     ],
   },
 ];
