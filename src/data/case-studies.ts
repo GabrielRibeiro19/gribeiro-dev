@@ -185,6 +185,91 @@ export const caseStudies: CaseStudy[] = [
     links: { live: "https://piraturismo.com.br" },
   },
   {
+    slug: "pirawebsites",
+    projectId: "pirawebsites",
+    title: {
+      pt: "A marca por trás dos sites: funil de leads e SEO local",
+      en: "The brand behind the websites: lead funnel and local SEO",
+    },
+    subtitle: {
+      pt: "PiraWebSites · marca própria",
+      en: "PiraWebSites · own brand",
+    },
+    role: {
+      pt: "Fundador e desenvolvedor",
+      en: "Founder and developer",
+    },
+    period: {
+      pt: "2023 — atual",
+      en: "2023 — present",
+    },
+    problem: {
+      pt: [
+        "Trabalhos freelance chegavam por indicação, mas sem uma marca era difícil transmitir confiança, mostrar portfólio e captar clientes de forma previsível em Piracicaba e região.",
+        "Pequenos negócios locais buscam 'criação de sites' no Google e acabam em plataformas genéricas — faltava uma presença que competisse nessa busca e convertesse a visita em conversa.",
+      ],
+      en: [
+        "Freelance work came through referrals, but without a brand it was hard to convey trust, showcase a portfolio and win clients predictably in Piracicaba and the surrounding region.",
+        "Local small businesses search Google for 'website creation' and land on generic platforms — what was missing was a presence that could compete for that search and turn the visit into a conversation.",
+      ],
+    },
+    solution: {
+      pt: [
+        "Criei a PiraWebSites: site próprio em Next.js com App Router, desenhado para conversão — formulário curto (nome + WhatsApp) já no hero, que envia e-mail e abre o WhatsApp com mensagem pré-preenchida. Funil WhatsApp-first do primeiro clique ao fechamento.",
+        "SEO local de verdade: 18 landing pages estáticas por cidade (/criacao-de-sites-em-[cidade]) geradas com generateStaticParams, JSON-LD LocalBusiness e FAQPage, sitemap e metadados por página — cada cidade da região com a sua porta de entrada indexável.",
+        "A marca vai além do site: portfólio de clientes integrado, páginas de proposta comercial personalizadas por cliente e um kit de conteúdo para Instagram com posts e stories gerados a partir de templates HTML.",
+      ],
+      en: [
+        "I created PiraWebSites: my own Next.js App Router website designed for conversion — a short form (name + WhatsApp) right in the hero that sends an email and opens WhatsApp with a pre-filled message. A WhatsApp-first funnel from first click to closing.",
+        "Real local SEO: 18 static per-city landing pages (/criacao-de-sites-em-[city]) generated with generateStaticParams, LocalBusiness and FAQPage JSON-LD, sitemap and per-page metadata — every city in the region gets its own indexable entry point.",
+        "The brand goes beyond the site: an integrated client portfolio, per-client commercial proposal pages and an Instagram content kit with posts and stories generated from HTML templates.",
+      ],
+    },
+    stack: [
+      {
+        label: { pt: "Frontend", en: "Frontend" },
+        items: ["Next.js (App Router)", "Tailwind", "Framer Motion"],
+      },
+      {
+        label: { pt: "Conversão & SEO", en: "Conversion & SEO" },
+        items: ["SSG por cidade", "JSON-LD LocalBusiness", "RHF + Zod", "Nodemailer", "GA4"],
+      },
+    ],
+    results: [
+      {
+        value: { pt: "10+ sites", en: "10+ websites" },
+        label: {
+          pt: "entregues sob a marca para clientes da região",
+          en: "delivered under the brand for regional clients",
+        },
+      },
+      {
+        value: { pt: "18 cidades", en: "18 cities" },
+        label: {
+          pt: "landing pages de SEO local indexáveis",
+          en: "indexable local-SEO landing pages",
+        },
+      },
+      {
+        value: { pt: "WhatsApp-first", en: "WhatsApp-first" },
+        label: {
+          pt: "funil de captação do hero ao fechamento",
+          en: "lead funnel from hero to closing",
+        },
+      },
+    ],
+    images: [
+      {
+        src: "/projects/pirawebsites.webp",
+        alt: {
+          pt: "Página inicial do site da PiraWebSites",
+          en: "PiraWebSites home page",
+        },
+      },
+    ],
+    links: { live: "https://pirawebsites.com.br" },
+  },
+  {
     slug: "grazy-modas",
     projectId: "grazy-modas",
     title: {
@@ -261,7 +346,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     images: [],
-    links: { live: "https://grazy-modas.vercel.app" },
+    links: { live: "https://grazymodas.pirawebsites.com.br" },
   },
   {
     slug: "construtor-brandao",
@@ -327,6 +412,6 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     images: [],
-    links: { live: "https://construtor-brandao.vercel.app" },
+    links: { live: "https://construtorbrandao.com.br" },
   },
 ];
