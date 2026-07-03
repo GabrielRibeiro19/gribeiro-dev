@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "title": "Gabriel Ribeiro — Fullstack Developer | React, Next.js, Node.js",
+    "description": "Mid-level Fullstack Developer with 4+ years of experience in React, Next.js, Node.js and TypeScript. From design to deploy: scalable web applications, APIs and digital products."
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact",
+    "menu": "Open menu",
+    "downloadCv": "Download CV",
+    "cvPt": "Português (PDF)",
+    "cvEn": "English (PDF)"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Fullstack Developer",
+    "pitch": "Building web applications end to end for over 4 years — currently crafting solutions for large-scale live events at Zig, with React, Next.js, Node.js and TypeScript.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch",
+    "avatarAlt": "Photo of Gabriel Ribeiro"
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "From help desk to the stages of Brazil's biggest live events",
+    "statsYears": "years of experience",
+    "statsProjects": "projects in production",
+    "statsRepos": "GitHub repositories"
+  },
+  "timeline": {
+    "eyebrow": "Experience",
+    "title": "Professional journey",
+    "present": "Present",
+    "expand": "Show details",
+    "collapse": "Hide details"
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "What I've built",
+    "featuredTitle": "Featured case studies",
+    "freelanceTitle": "Delivered websites & systems",
+    "freelanceSubtitle": "Freelance projects live in production, built end to end — from layout to deploy.",
+    "viewCase": "Read full case",
+    "visitSite": "Visit website",
+    "githubCtaTitle": "There's more on GitHub",
+    "githubCtaText": "40+ repositories across projects, technical challenges and studies.",
+    "githubCtaButton": "View GitHub",
+    "kindFreelance": "Freelance",
+    "kindSaas": "Own product",
+    "kindProfessional": "Professional"
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Technologies & tools"
+  },
+  "education": {
+    "eyebrow": "Education",
+    "title": "Education & certifications",
+    "inProgress": "In progress",
+    "done": "Completed",
+    "certifications": "Certifications"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk?",
+    "lead": "Open to new opportunities and good conversations about technology. Reach out on whichever channel you prefer — I reply fast.",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hi Gabriel! I found your portfolio at gribeiro.dev and would like to talk.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js 16 and Tailwind v4 — open source on",
+    "rights": "All rights reserved."
+  },
+  "case": {
+    "backToProjects": "Back to projects",
+    "role": "Role",
+    "period": "Period",
+    "problem": "The problem",
+    "solution": "The solution",
+    "stack": "Stack & practices",
+    "results": "Results",
+    "liveSite": "View live",
+    "repo": "Repository",
+    "nda": "Project under NDA — business details and product visuals are confidential. What I can share: scale, practices and technologies.",
+    "prevCase": "Previous case",
+    "nextCase": "Next case",
+    "otherCases": "Other cases"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light theme",
+    "dark": "Dark theme"
+  },
+  "locale": {
+    "label": "Language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The link you followed doesn't exist or has been moved.",
+    "back": "Back to home"
+  }
+}
