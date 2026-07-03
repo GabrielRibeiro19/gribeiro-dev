@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { TechIcon } from "@/components/tech-icon";
 import type { SkillGroup } from "@/data/types";
 import type { Resolved } from "@/repositories/content";
 import { cn } from "@/lib/utils";
@@ -28,12 +29,13 @@ export async function Skills({ groups }: SkillsProps) {
                   <span
                     key={skill.name}
                     className={cn(
-                      "rounded-md border px-2.5 py-1 font-mono text-xs",
+                      "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs",
                       skill.level === "core"
                         ? "border-primary/40 bg-primary/10 text-primary"
                         : "border-border bg-muted/50 text-muted-foreground",
                     )}
                   >
+                    <TechIcon name={skill.name} />
                     {skill.name}
                   </span>
                 ))}

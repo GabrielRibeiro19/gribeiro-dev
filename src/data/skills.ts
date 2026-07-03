@@ -52,6 +52,15 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    id: "ai-tools",
+    label: { pt: "IA & Produtividade", en: "AI & Productivity" },
+    skills: [
+      { name: "Claude Code", level: "core" },
+      { name: "Cursor", level: "working" },
+      { name: "Gemini API", level: "working" },
+    ],
+  },
+  {
     id: "quality-tools",
     label: { pt: "Qualidade & Ferramentas", en: "Quality & Tools" },
     skills: [
@@ -60,6 +69,8 @@ export const skillGroups: SkillGroup[] = [
       { name: "Figma", level: "working" },
       { name: "Insomnia / Postman", level: "working" },
       { name: "WordPress", level: "working" },
+      { name: "ClickUp", level: "working" },
+      { name: "Slack", level: "working" },
     ],
   },
 ];
