@@ -29,7 +29,7 @@ export const projects: Project[] = [
     url: "https://piraturismo.com.br",
     image: "/projects/piraturismo.webp",
     logo: "/projects/logos/piraturismo.webp",
-    stack: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Tailwind"],
+    stack: ["Next.js", "NestJS", "Prisma", "Grafana", "Docker"],
     caseStudySlug: "pira-turismo",
   },
   {
@@ -41,7 +41,7 @@ export const projects: Project[] = [
       en: "Full online store with its own admin panel: catalog, inventory and orders.",
     },
     url: "https://grazy-modas.vercel.app",
-    stack: ["Next.js 16", "Prisma", "Auth.js", "PostgreSQL", "Tailwind v4"],
+    stack: ["Next.js 16", "Prisma 7", "Auth.js", "Sentry", "Vitest"],
     caseStudySlug: "grazy-modas",
   },
   {

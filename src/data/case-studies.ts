@@ -120,28 +120,34 @@ export const caseStudies: CaseStudy[] = [
     },
     solution: {
       pt: [
-        "A plataforma é um monorepo com NestJS no backend e Next.js 15 no frontend, com Prisma sobre PostgreSQL e TailwindCSS na interface — organizado com Turborepo, lint e type-check integrados ao fluxo de commits.",
-        "As agências gerenciam pacotes, saídas e reservas em um painel próprio; os viajantes navegam pelo catálogo e reservam online. Migrations versionadas e seeds automatizados mantêm os ambientes reproduzíveis.",
-        "O projeto também é meu laboratório de arquitetura: decisões de modelagem, autenticação, cache e CI/CD passam primeiro por aqui antes de virarem prática nos meus outros trabalhos.",
+        "A plataforma é um monorepo com NestJS no backend (cerca de 40 módulos: reservas, assinaturas, campanhas, blog, push, auditoria) e dois frontends Next.js 15 — o site B2C e o painel admin B2B — com Prisma sobre PostgreSQL, React Query e componentes compartilhados. Turborepo, lint, type-check e hooks de pre-commit/pre-push mantêm o fluxo disciplinado.",
+        "Autenticação JWT com refresh tokens e uma cadeia de guards cobre papéis, multi-tenancy por agência e liberação de recursos por plano de assinatura. Dez rotinas agendadas (lembretes, campanhas, cobrança) rodam com trilha de auditoria própria.",
+        "Observabilidade de produção completa e self-hosted: logs estruturados com Pino — com redação automática de segredos e correlação por request-id — fluem via Promtail para o Loki e alimentam dashboards do Grafana provisionados como código: logs por nível, erros recentes, respostas 4xx/5xx e volume por serviço, com retenção de 30 dias.",
+        "A infra roda em VPS com Docker Compose e proxy Caddy (HTTPS automático, security headers, bloqueio de scanners). O deploy via GitHub Actions só conclui depois que o health-check da API responde — e healthchecks em todos os serviços detectam e reiniciam qualquer coisa que cair.",
       ],
       en: [
-        "The platform is a monorepo with NestJS on the backend and Next.js 15 on the frontend, with Prisma over PostgreSQL and TailwindCSS on the interface — organized with Turborepo, with lint and type-check wired into the commit flow.",
-        "Agencies manage packages, departures and bookings in their own panel; travelers browse the catalog and book online. Versioned migrations and automated seeds keep environments reproducible.",
-        "The project is also my architecture lab: modeling, authentication, caching and CI/CD decisions are tried here first before becoming practice in my other work.",
+        "The platform is a monorepo with NestJS on the backend (around 40 modules: bookings, subscriptions, campaigns, blog, push, audit) and two Next.js 15 frontends — the B2C site and the B2B admin panel — with Prisma over PostgreSQL, React Query and shared components. Turborepo, lint, type-check and pre-commit/pre-push hooks keep the workflow disciplined.",
+        "JWT authentication with refresh tokens and a guard chain covers roles, per-agency multi-tenancy and feature gating by subscription plan. Ten scheduled jobs (reminders, campaigns, billing) run with their own audit trail.",
+        "Full self-hosted production observability: structured Pino logs — with automatic secret redaction and request-id correlation — flow through Promtail into Loki and feed Grafana dashboards provisioned as code: logs by level, recent errors, 4xx/5xx responses and volume per service, with 30-day retention.",
+        "The infrastructure runs on a VPS with Docker Compose and a Caddy proxy (automatic HTTPS, security headers, scanner blocking). The GitHub Actions deploy only completes after the API health check responds — and healthchecks on every service detect and restart anything that goes down.",
       ],
     },
     stack: [
       {
         label: { pt: "Frontend", en: "Frontend" },
-        items: ["Next.js 15", "React", "TailwindCSS"],
+        items: ["Next.js 15 (web + admin)", "React Query", "Zustand", "Zod"],
       },
       {
         label: { pt: "Backend", en: "Backend" },
-        items: ["NestJS", "Prisma", "PostgreSQL"],
+        items: ["NestJS 11", "Prisma", "PostgreSQL", "JWT + guards", "Cron jobs"],
       },
       {
-        label: { pt: "Infra & DX", en: "Infra & DX" },
-        items: ["Turborepo", "CI/CD", "Husky", "Migrations"],
+        label: { pt: "Observabilidade", en: "Observability" },
+        items: ["Grafana", "Loki", "Promtail", "Pino", "Healthchecks"],
+      },
+      {
+        label: { pt: "Infra & CI/CD", en: "Infra & CI/CD" },
+        items: ["Docker Compose", "Caddy", "GitHub Actions", "VPS", "Turborepo"],
       },
     ],
     results: [
@@ -160,10 +166,10 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
-        value: { pt: "Fullstack", en: "Fullstack" },
+        value: { pt: "100% observável", en: "100% observable" },
         label: {
-          pt: "do banco de dados ao pixel, projeto solo",
-          en: "from database to pixel, solo project",
+          pt: "Grafana, Loki e healthchecks em produção",
+          en: "Grafana, Loki and healthchecks in production",
         },
       },
     ],
@@ -207,22 +213,28 @@ export const caseStudies: CaseStudy[] = [
     },
     solution: {
       pt: [
-        "Loja virtual construída em Next.js 16 com App Router e Tailwind v4, focada em performance, SEO e uma experiência de compra fluida no celular — onde está a maioria das clientes.",
-        "Painel administrativo sob medida com autenticação via Auth.js e banco PostgreSQL com Prisma: produtos, categorias, variações, estoque e pedidos gerenciados pela própria lojista, sem depender de desenvolvedor para o dia a dia.",
+        "Loja virtual construída em Next.js 16 com App Router e Tailwind v4, focada em performance, SEO e uma experiência de compra fluida no celular — onde está a maioria das clientes. Checkout fecha direto no WhatsApp, com carrinho persistido no servidor.",
+        "Painel administrativo sob medida com Auth.js v5 (login Google + credenciais, com revalidação da sessão contra o banco a cada request) e PostgreSQL no Neon via Prisma 7: produtos, estoque por tamanho, pedidos, cupons, banners e blog gerenciados pela própria lojista. Frete e rastreio integrados à API dos Correios, uploads server-only no Firebase Storage e rate limiting com Upstash Redis.",
+        "Monitoramento e qualidade de gente grande: Sentry nos três runtimes do Next (client, server e edge) com scrubbing de PII para LGPD, GA4 com Consent Mode v2 e Meta Pixel controlado pelo painel — tudo condicionado ao aceite de cookies. Mais de 30 arquivos de testes com Vitest e hooks de pre-commit/pre-push protegem cada entrega.",
       ],
       en: [
-        "Online store built with Next.js 16 App Router and Tailwind v4, focused on performance, SEO and a smooth mobile shopping experience — where most customers are.",
-        "Tailor-made admin panel with Auth.js authentication and PostgreSQL with Prisma: products, categories, variants, inventory and orders managed by the store owner herself, with no developer needed for daily operations.",
+        "Online store built with Next.js 16 App Router and Tailwind v4, focused on performance, SEO and a smooth mobile shopping experience — where most customers are. Checkout closes directly on WhatsApp, with a server-persisted cart.",
+        "Tailor-made admin panel with Auth.js v5 (Google + credentials login, session revalidated against the database on every request) and PostgreSQL on Neon via Prisma 7: products, per-size inventory, orders, coupons, banners and blog managed by the store owner herself. Shipping quotes and tracking integrated with the Correios API, server-only uploads to Firebase Storage and rate limiting with Upstash Redis.",
+        "Serious monitoring and quality: Sentry across all three Next runtimes (client, server and edge) with PII scrubbing for LGPD compliance, GA4 with Consent Mode v2 and an admin-controlled Meta Pixel — all gated behind cookie consent. 30+ Vitest test files and pre-commit/pre-push hooks protect every delivery.",
       ],
     },
     stack: [
       {
         label: { pt: "Frontend", en: "Frontend" },
-        items: ["Next.js 16", "React 19", "Tailwind v4"],
+        items: ["Next.js 16", "React 19", "Tailwind v4", "shadcn/Base UI"],
       },
       {
         label: { pt: "Backend & Dados", en: "Backend & Data" },
-        items: ["Prisma", "PostgreSQL", "Auth.js"],
+        items: ["Prisma 7", "PostgreSQL (Neon)", "Auth.js v5", "Upstash Redis", "Firebase Storage"],
+      },
+      {
+        label: { pt: "Observabilidade & Qualidade", en: "Observability & Quality" },
+        items: ["Sentry (client/server/edge)", "GA4 Consent Mode v2", "Vitest (30+)", "Husky"],
       },
     ],
     results: [
@@ -234,10 +246,17 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
-        value: { pt: "Sob medida", en: "Tailor-made" },
+        value: { pt: "Sentry", en: "Sentry" },
         label: {
-          pt: "zero mensalidade de plataforma pronta",
-          en: "zero monthly platform fees",
+          pt: "erros rastreados em client, server e edge",
+          en: "errors tracked across client, server and edge",
+        },
+      },
+      {
+        value: { pt: "30+ testes", en: "30+ tests" },
+        label: {
+          pt: "Vitest cobrindo a lógica de negócio",
+          en: "Vitest covering the business logic",
         },
       },
     ],

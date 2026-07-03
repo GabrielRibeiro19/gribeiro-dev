@@ -18,7 +18,7 @@
     font-size: 9.1pt;
     line-height: 1.36;
   }
-  header { margin-bottom: 12px; }
+  header { margin-bottom: 8px; }
   h1 { font-size: 20pt; letter-spacing: -0.5px; }
   .role { font-size: 11.5pt; color: var(--accent); font-weight: 600; margin-top: 1px; }
   .contacts { margin-top: 6px; color: var(--muted); font-size: 8.6pt; }
@@ -27,7 +27,7 @@
   h2 {
     font-size: 9.5pt; text-transform: uppercase; letter-spacing: 1.6px;
     color: var(--accent); border-bottom: 1px solid var(--line);
-    padding-bottom: 3px; margin: 10px 0 6px;
+    padding-bottom: 2px; margin: 8px 0 5px;
   }
   .summary { color: var(--ink); }
   .job { margin-bottom: 7px; break-inside: avoid; }
@@ -37,14 +37,14 @@
   .job-period { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
   .job-summary { color: var(--muted); margin: 1px 0 3px; }
   ul { padding-left: 14px; }
-  li { margin-bottom: 2px; }
+  li { margin-bottom: 1px; }
   .skills-row { margin-bottom: 4px; }
   .skills-row b { display: inline-block; min-width: 150px; }
   .edu { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
   .two-col { display: flex; gap: 24px; }
   .two-col > div { flex: 1; }
   .fine { color: var(--muted); }
-  a { color: inherit; text-decoration: none; }
+  a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -53,11 +53,11 @@
     <p class="role">Mid-level Fullstack Developer · React · Next.js · Node.js · TypeScript</p>
     <p class="contacts">
       <span>Piracicaba, SP — Brazil</span>
-      <span>+55 19 99849-9296</span>
-      <span>gabriel.hsribeiro19@gmail.com</span>
-      <span>gribeiro.dev</span>
-      <span>linkedin.com/in/gabriel-ribeiro-378028161</span>
-      <span>github.com/GabrielRibeiro19</span>
+      <span><a href="https://wa.me/5519998499296">+55 19 99849-9296</a></span>
+      <span><a href="mailto:gabriel.hsribeiro19@gmail.com">gabriel.hsribeiro19@gmail.com</a></span>
+      <span><a href="https://gribeiro.dev">gribeiro.dev</a></span>
+      <span><a href="https://www.linkedin.com/in/gabriel-ribeiro-378028161/">linkedin.com/in/gabriel-ribeiro-378028161</a></span>
+      <span><a href="https://github.com/GabrielRibeiro19">github.com/GabrielRibeiro19</a></span>
     </p>
   </header>
 
@@ -122,10 +122,10 @@
   <h2>Selected projects</h2>
   <div class="job">
     <ul>
-      <li><b>Pira Turismo</b> — SaaS travel marketplace platform (B2B/B2C) with online booking. NestJS + Next.js 15 + Prisma/PostgreSQL monorepo. Own product, in production. (piraturismo.com.br)</li>
-      <li><b>Grazy Modas</b> — e-commerce with a custom admin panel (Next.js 16, Prisma, Auth.js, PostgreSQL).</li>
+      <li><b>Pira Turismo</b> — SaaS travel marketplace platform (B2B/B2C) with online booking. NestJS + Next.js 15 + Prisma/PostgreSQL monorepo, with self-hosted observability (Grafana, Loki, Pino), healthchecks and CI/CD deploying to a VPS. Own product, in production. (<a href="https://piraturismo.com.br">piraturismo.com.br</a>)</li>
+      <li><b>Grazy Modas</b> — e-commerce with a custom admin panel (Next.js 16, Prisma 7, Auth.js v5), Sentry across client/server/edge and 30+ Vitest tests.</li>
       <li><b>Construtor Brandão</b> — business website with embedded Payload CMS (Next.js 16, Tailwind v4, Neon, Firebase Storage).</li>
-      <li><b>10+ freelance websites and systems</b> in production, end to end — full portfolio at gribeiro.dev.</li>
+      <li><b>10+ freelance websites and systems</b> in production, end to end — full portfolio at <a href="https://gribeiro.dev">gribeiro.dev</a>.</li>
     </ul>
   </div>
 
@@ -133,7 +133,7 @@
   <p class="skills-row"><b>Frontend</b> React, Next.js, TypeScript, JavaScript, TailwindCSS, React Query, Styled Components</p>
   <p class="skills-row"><b>Backend</b> Node.js, NestJS, Prisma, PostgreSQL, REST APIs</p>
   <p class="skills-row"><b>DevOps &amp; Cloud</b> Docker, AWS, Vercel, CI/CD</p>
-  <p class="skills-row"><b>Observability</b> Datadog, Grafana</p>
+  <p class="skills-row"><b>Observability</b> Datadog, Grafana, Loki, Pino, Sentry</p>
   <p class="skills-row"><b>Quality &amp; Tools</b> Automated testing, Git/GitHub, Figma, Insomnia/Postman</p>
 
   <div class="two-col">

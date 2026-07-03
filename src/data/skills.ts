@@ -42,6 +42,9 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { name: "Datadog", level: "core" },
       { name: "Grafana", level: "core" },
+      { name: "Loki", level: "working" },
+      { name: "Sentry", level: "working" },
+      { name: "Pino", level: "working" },
     ],
   },
   {
