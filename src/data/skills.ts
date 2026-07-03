@@ -20,10 +20,14 @@ export const skillGroups: SkillGroup[] = [
     label: { pt: "Backend", en: "Backend" },
     skills: [
       { name: "Node.js", level: "core" },
-      { name: "NestJS", level: "working" },
-      { name: "Prisma", level: "working" },
-      { name: "PostgreSQL", level: "working" },
       { name: "REST APIs", level: "core" },
+      { name: "NestJS", level: "working" },
+      { name: "Prisma", level: "core" },
+      { name: "TypeORM", level: "working" },
+      { name: "SQL", level: "core" },
+      { name: "PostgreSQL", level: "core" },
+      { name: "MySQL", level: "working" },
+      { name: "MariaDB", level: "working" },
     ],
   },
   {
