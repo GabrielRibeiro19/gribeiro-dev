@@ -74,4 +74,13 @@ export interface EducationItem {
 export interface Profile {
   aboutParagraphs: LocalizedList;
   certifications: string[];
+  personal: {
+    /** ISO date used to compute age at runtime. */
+    birthDate: string;
+    animes: string[];
+    fandoms: string[];
+    hobbies: LocalizedList;
+    music: Localized;
+    mission: Localized;
+  };
 }

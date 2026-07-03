@@ -1,12 +1,18 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/motion/reveal";
+import { AboutPersonal } from "@/components/sections/about-personal";
 import { SectionHeading } from "@/components/sections/section-heading";
+import type { Profile } from "@/data/types";
+import type { Locale } from "@/i18n/routing";
+import type { Resolved } from "@/repositories/content";
 
 type AboutProps = {
   paragraphs: string[];
+  personal: Resolved<Profile>["personal"];
+  locale: Locale;
 };
 
-export async function About({ paragraphs }: AboutProps) {
+export async function About({ paragraphs, personal, locale }: AboutProps) {
   const t = await getTranslations("about");
 
   const stats = [
@@ -26,7 +32,7 @@ export async function About({ paragraphs }: AboutProps) {
             </p>
           ))}
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="lg:sticky lg:top-24 lg:self-start">
           <dl className="grid grid-cols-3 gap-4 lg:grid-cols-1">
             {stats.map((stat) => (
               <div
@@ -44,6 +50,7 @@ export async function About({ paragraphs }: AboutProps) {
           </dl>
         </Reveal>
       </div>
+      <AboutPersonal personal={personal} locale={locale} />
     </section>
   );
 }

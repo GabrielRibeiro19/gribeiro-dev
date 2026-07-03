@@ -105,7 +105,11 @@ export default async function HomePage({ params }: Props) {
         <JsonLd key={index} data={data} />
       ))}
       <Hero />
-      <About paragraphs={profile.aboutParagraphs} />
+      <About
+        paragraphs={profile.aboutParagraphs}
+        personal={profile.personal}
+        locale={currentLocale}
+      />
       <Timeline items={experience} />
       <Projects featured={featured} grid={grid} />
       <Skills groups={skills} />

@@ -22,4 +22,28 @@ export const profile: Profile = {
     "Docker na prática",
     "Desafio Microsserviços Escaláveis",
   ],
+  personal: {
+    birthDate: "2002-04-27",
+    animes: [
+      "Naruto",
+      "Demon Slayer",
+      "Jujutsu Kaisen",
+      "Attack on Titan",
+      "My Hero Academia",
+      "Solo Leveling",
+    ],
+    fandoms: ["Star Wars", "Game of Thrones"],
+    hobbies: {
+      pt: ["academia", "cachorros & animais"],
+      en: ["gym", "dogs & animals"],
+    },
+    music: {
+      pt: "de tudo um pouco — sempre no aleatório",
+      en: "a bit of everything — always on shuffle",
+    },
+    mission: {
+      pt: "criar apps que dão visibilidade e resolvem problemas reais",
+      en: "building apps that create visibility and solve real problems",
+    },
+  },
 };
