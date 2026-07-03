@@ -99,6 +99,37 @@
     background: var(--primary);
     color: var(--primary-foreground);
   }
+
+  /* Scrollbar personalizada — WebKit (Chrome/Edge/Safari) */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--foreground) 22%, transparent);
+    border-radius: 9999px;
+    border: 3px solid var(--background);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    border-width: 2px;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Fallback Firefox (não suporta ::-webkit-scrollbar) */
+  @supports not selector(::-webkit-scrollbar) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in oklch, var(--foreground) 30%, transparent)
+        transparent;
+    }
+  }
 }
 
 @layer utilities {
