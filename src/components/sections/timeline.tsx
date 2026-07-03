@@ -35,14 +35,7 @@ function TimelineEntry({ item }: { item: TimelineItem }) {
   }`;
 
   return (
-    <li className="relative pl-8 sm:pl-10">
-      <span
-        aria-hidden
-        className={cn(
-          "absolute top-1.5 left-0 size-3 -translate-x-1/2 rounded-full border-2 border-background",
-          isCurrent ? "bg-primary ring-4 ring-primary/20" : "bg-border",
-        )}
-      />
+    <>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <h3 className="font-heading text-lg font-semibold">{item.role}</h3>
         {isCurrent && <Badge>{t("present")}</Badge>}
@@ -112,7 +105,7 @@ function TimelineEntry({ item }: { item: TimelineItem }) {
           </div>
         </>
       )}
-    </li>
+    </>
   );
 }
 
@@ -127,9 +120,20 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
       <SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
       <ol className="relative ml-1.5 space-y-12 border-l border-border sm:ml-2">
         {items.map((item, index) => (
-          <Reveal key={item.id} delay={Math.min(index * 0.06, 0.3)}>
-            <TimelineEntry item={item} />
-          </Reveal>
+          <li key={item.id} className="relative pl-8 sm:pl-10">
+            <span
+              aria-hidden
+              className={cn(
+                "absolute top-1.5 left-0 size-3 -translate-x-1/2 rounded-full border-2 border-background",
+                item.end === null
+                  ? "bg-primary ring-4 ring-primary/20"
+                  : "bg-border",
+              )}
+            />
+            <Reveal delay={Math.min(index * 0.06, 0.3)}>
+              <TimelineEntry item={item} />
+            </Reveal>
+          </li>
         ))}
       </ol>
     </section>

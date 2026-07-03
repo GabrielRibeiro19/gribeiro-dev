@@ -39,7 +39,7 @@ export async function Hero() {
         <div className="bg-grid absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]" />
       </div>
 
-      <div className="mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-6xl flex-col-reverse items-center justify-center gap-12 px-6 py-16 lg:flex-row lg:justify-between lg:gap-16 lg:px-8">
+      <div className="mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-6xl flex-col items-center justify-center gap-12 px-6 py-16 lg:flex-row lg:justify-between lg:gap-16 lg:px-8">
         <div className="max-w-2xl text-center lg:text-left">
           <p className="mb-4 font-mono text-sm text-primary">
             {t("greeting")}
@@ -97,6 +97,8 @@ export async function Hero() {
             width={288}
             height={288}
             priority
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 18rem, (min-width: 640px) 16rem, 13rem"
             className="relative size-52 rounded-full object-cover ring-2 ring-primary/40 ring-offset-4 ring-offset-background sm:size-64 lg:size-72"
           />
         </div>
