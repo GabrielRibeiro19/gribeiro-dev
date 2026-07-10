@@ -345,8 +345,16 @@ export const caseStudies: CaseStudy[] = [
         },
       },
     ],
-    images: [],
-    links: { live: "https://grazymodas.pirawebsites.com.br" },
+    images: [
+      {
+        src: "/projects/grazymodas.webp",
+        alt: {
+          pt: "Página inicial da loja Grazy Modas",
+          en: "Grazy Modas store home page",
+        },
+      },
+    ],
+    links: { live: "https://grazymodas.com.br" },
   },
   {
     slug: "construtor-brandao",
